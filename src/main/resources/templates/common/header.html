@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="${ctxPath}/assets/css/menu.css"/>
+<link rel="stylesheet" href="http://at.alicdn.com/t/c/font_3754441_ynenwvdln6a.css">
 <div class="fly-header layui-bg-black">
 	  <div class="layui-container">
 		<ul class="layui-nav fly-nav layui-hide-xs">
@@ -7,6 +9,14 @@
 		        </li>
 		  </:for>
 		</ul>
+		  <div class="shell">
+			  <:for items="${menu}" var="item">
+				  <a href="${item.url}" class="box">
+					  <i class="${item.icon}"></i>
+					  <span>${item.name}</span>
+				  </a>
+			  </:for>
+		  </div>
 		<ul class="layui-nav fly-nav-user">
 		  
 		  <!-- 未登入的状态 -->
@@ -38,3 +48,13 @@
     </ul>
   </div>
 </div>
+<script>
+	var aList = document.querySelectorAll(".shell a");
+	for (let i = 0; i < aList.length; i++) {
+		if (window.location.href.slice(21,40) ===aList[i].attributes["href"].nodeValue ){
+			aList[i].classList.add('active');
+		}
+
+	}
+
+</script>
