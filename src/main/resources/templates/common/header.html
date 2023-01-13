@@ -3,11 +3,20 @@
 <div class="fly-header layui-bg-black">
 	  <div class="layui-container">
 		<ul class="layui-nav fly-nav layui-hide-xs">
-		  <:for items="${menu}" var="item">
 		       	<li class="layui-nav-item layui-this">
-			        <a href="${item.url}"><i class="${item.icon}"></i>${item.name}</a>
+			       <h1>
+					   <img style="width: 53px;" src="https://img.weianzhuo.cn/m00/a7/22/e22f693c50e7fca6c6e045b554559860.png" alt="logo">
+				   </h1>
+
 		        </li>
-		  </:for>
+			     <li class="layui-nav-item layui-this searchBox" style="top: 0 !important;margin-left: -7%;line-height: 20px;">
+
+						 <i class="layui-icon layui-icon-search" style="font-size: 30px;"></i>
+						 <input type="text" id="sea_text" class="searchInput search-inp" autocomplete="off" placeholder="请输入您要查找的源码标题">
+						 <button type="button" class="layui-btn layui-btn-normal" onclick="Search()">查询</button>
+
+				 </li>
+
 		</ul>
 		  <div class="shell">
 			  <:for items="${menu}" var="item">
